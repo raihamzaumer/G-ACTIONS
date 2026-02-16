@@ -17,7 +17,7 @@ jobs:
 
         - name: Genrate art work
           run: |
-              sudo apt install cowsay 
+              sudo apt-get install cowsay -y
               cowsay -f dragon "Run for cover I am dragon ................rawwww!" >> dragon.txt
 
 
