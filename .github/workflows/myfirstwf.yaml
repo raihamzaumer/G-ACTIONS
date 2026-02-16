@@ -10,16 +10,13 @@ jobs:
           uses: actions/checkout@v6
 
         - name: Welcome Message
-          run: |
-                echo "My first work flow"
-                ls -ltr
-                cat README.md
+          run: ls -ltra
+                
 
-        - name: Genrate art work
+        - name: Executing shell file
           run: |
-              sudo apt-get install cowsay -y
-              cowsay -f dragon "Run for cover I am dragon ................rawwww!" >> dragon.txt
-              cat dragon.txt
+              chmod +x ./ascii.sh
+              ./ascii.sh
 
 
         # - name: list file
