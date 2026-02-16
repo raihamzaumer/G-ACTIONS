@@ -18,14 +18,20 @@ jobs:
   test_job:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v6
+
       - name: Test "Check file exsits"
         run: grep -i "dragon" dragon.txt
+      
 
   deploy_job:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v6
       - name: Display Ascii Art work
         run: cat dragon.txt
-        
+
       - name: Display Message
         run: echo "Deploying........."
