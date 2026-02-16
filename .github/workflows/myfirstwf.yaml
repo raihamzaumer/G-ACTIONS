@@ -16,8 +16,10 @@ jobs:
                 cat README.md
 
         - name: Genrate art work
-          run: cowsay -f dragon "Run for cover I am dragon ................rawwww!" >> dragon.txt
-          
+          run: |
+              sudo apt install cowsay 
+              cowsay -f dragon "Run for cover I am dragon ................rawwww!" >> dragon.txt
+
 
         # - name: list file
         #   run: ls
