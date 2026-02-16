@@ -3,7 +3,7 @@ name: Multi jobs workflow
 on: push
 
 jobs:
-  build_job:
+  build_job_1:
     runs-on: ubuntu-latest
     steps:
     - name: Install cowsay libraray
@@ -15,21 +15,20 @@ jobs:
     - name: sleep f0r 30 seconds
       run: sleep 30
 
-  test_job:
+  test_job_2:
+    needs: build_job_1
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v6
+      
 
       - name: Test "Check file exsits"
         run: grep -i "dragon" dragon.txt
       
 
-  deploy_job:
+  deploy_job_3:
+    needs: test_job_2
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v6
       - name: Display Ascii Art work
         run: cat dragon.txt
 
